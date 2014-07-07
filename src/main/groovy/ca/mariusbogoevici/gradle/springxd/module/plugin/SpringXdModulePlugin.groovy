@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.springframework.build.gradle.springxd
+package ca.mariusbogoevici.gradle.springxd.module.plugin
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

@@ -26,7 +26,7 @@ class SpringXdModulePlugin implements Plugin<Project> {
     void apply(Project project) {
 
         project.task('buildModule', dependsOn: 'build', type:Zip) {
-            archiveName = name + '.zip'
+            archiveName = project.name + '.zip'
             from(project.tasks.getByName('jar').archivePath) {
                 into 'lib'
             }
@@ -34,7 +34,7 @@ class SpringXdModulePlugin implements Plugin<Project> {
                 into 'lib'
             }
             from(project.sourceSets.main.resources) {
-                into 'config'
+                into ''
             }
         }
     }

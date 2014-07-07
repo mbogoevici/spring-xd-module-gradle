@@ -26,7 +26,11 @@ class SpringXdModulePlugin implements Plugin<Project> {
     void apply(Project project) {
 
         project.task('buildModule', dependsOn: 'build', type:Zip) {
-            archiveName = project.name + '.zip'
+
+            // TODO archive must be configurable through a property
+            // also ensure that the zip name matches the configuration file
+            archiveName project.name + '-' + project.version + '.zip'
+
             from(project.tasks.getByName('jar').archivePath) {
                 into 'lib'
             }
